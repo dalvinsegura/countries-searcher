@@ -6,7 +6,7 @@ const Navbar = () => {
             <h1>Countries Searcher <i>by Dalvin Segura</i></h1>
 
             <div className="toggle-mode">
-                <span>Dark Mode</span>
+                <span> <i class="fa-solid fa-moon"></i> Dark Mode</span>
             </div>
             
         </div>
