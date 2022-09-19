@@ -1,13 +1,17 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: none;
-    text-decoration: none;
-    outline: none;
+$font-family: "Lato", sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+  outline: none;
 }
 
-body{
-    background-color: hsl(207, 26%, 17%);
-    color: #eeee;
+body {
+  background-color: hsl(207, 26%, 17%);
+  color: #eeee;
+
+  font-family: $font-family;
 }
