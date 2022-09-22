@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import "./all-countries.scss";
-import "./searcher.scss";
+import "./input-fitlers.scss";
 // import Searcher from "./../seacher/Searcher";
 
 const AllCountries = () => {
   const [dataCountry, setDataCountry] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [regionSelected, setRegionSelected] = useState("all");
 
   useEffect(() => {
     const fetchingData = async () => {
@@ -13,13 +14,21 @@ const AllCountries = () => {
       const data = await res.json();
 
       setDataCountry(data);
-      // console.log(data);
     };
     fetchingData();
   }, []);
 
   const PreviewCard = () => {
     return dataCountry
+      .filter((val) => {
+        if (regionSelected == "all") {
+          return val;
+        } else if (
+          val.region.toLowerCase() == regionSelected.toLocaleLowerCase()
+        ) {
+          return val;
+        }
+      })
       .filter((val) => {
         if (searchTerm == "") {
           return val;
@@ -57,18 +66,37 @@ const AllCountries = () => {
 
   return (
     <div>
-      <div className="searcher">
-        <label>
-          <i className="fa-solid fa-magnifying-glass icon-searcher"></i>
-          <input
-            type="text"
-            className="input-searcher"
-            placeholder="Search for a country..."
+      <div className="input-fitlers-container">
+        <div className="searcher">
+          <label>
+            <i className="fa-solid fa-magnifying-glass icon-searcher"></i>
+            <input
+              type="text"
+              className="input-searcher"
+              placeholder="Search for a country..."
+              onChange={(event) => {
+                setSearchTerm(event.target.value);
+              }}
+            />
+          </label>
+        </div>
+
+        <div className="fitler-region-container">
+          <select
+            name="selector-region"
             onChange={(event) => {
-              setSearchTerm(event.target.value);
+              setRegionSelected(event.target.value);
             }}
-          />
-        </label>
+          >
+            <option value="all">All Countries</option>
+            <option value="americas">Americas</option>
+            <option value="asia">Asia</option>
+            <option value="africa">Africa</option>
+            <option value="europe">Europe</option>
+            <option value="oceania">Oceania</option>
+            <option value="antarctic">Antarctic</option>
+          </select>
+        </div>
       </div>
 
       <div className="preview-container">
