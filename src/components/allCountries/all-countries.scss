@@ -1,0 +1,61 @@
+$borderRadiusPreviewCard: 5px;
+
+.preview-container {
+  width: 100%;
+  display: grid;
+  gap: 4rem 5rem;
+  grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
+  grid-row: auto;
+
+  margin-bottom: 5rem;
+
+  .preview-card {
+    width: 100%;
+    height: auto;
+    background: hsl(209, 23%, 22%);
+    border-radius: $borderRadiusPreviewCard;
+
+    // margin: 0 2rem;
+
+    .img-container {
+      img {
+        width: 100%;
+        height: 8.5rem;
+        border-top-left-radius: $borderRadiusPreviewCard;
+        border-top-right-radius: $borderRadiusPreviewCard;
+      }
+    }
+
+    .preview-text-content {
+      padding: 1rem 1rem 2.3rem;
+
+      h3 {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: hsl(0, 0%, 79%);
+
+        margin: 0 0 1rem 0;
+      }
+
+      h5 {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: hsl(0, 0%, 79%);
+
+        margin: 0.3rem 0;
+
+        span {
+          color: hsl(0, 0%, 72%);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.preview-card:hover {
+  box-shadow: 0 0 8px 2px hsl(203, 29%, 11%);
+  transform: scale(1.02, 1.02);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
