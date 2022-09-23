@@ -1,24 +1,33 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+
+
 import "./all-countries.scss";
 import "./input-fitlers.scss";
 // import Searcher from "./../seacher/Searcher";
 
 const AllCountries = () => {
+  const navigate = useNavigate ()
+  
+  
   const [dataCountry, setDataCountry] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [regionSelected, setRegionSelected] = useState("all");
-
+  
   useEffect(() => {
     const fetchingData = async () => {
       const res = await fetch("https://restcountries.com/v3.1/all");
       const data = await res.json();
-
+      
       setDataCountry(data);
     };
     fetchingData();
   }, []);
-
+  
+  
+  
   const PreviewCard = () => {
+
     return dataCountry
       .filter((val) => {
         if (regionSelected == "all") {
@@ -39,7 +48,10 @@ const AllCountries = () => {
         }
       })
       .map((country) => (
-        <div key={country.name.official} className="preview-card">
+        <div key={country.name.official} className="preview-card" onClick={() => {
+          navigate(`/country/${country.cca2.toString().toLocaleUpperCase()}`)
+
+        }}>
           <div className="img-container">
             <img src={country.flags.png} alt="a" />
           </div>
