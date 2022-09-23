@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 
 import "./country-detailed.scss";
 
 const CountryDetailed = () => {
   const { code } = useParams();
   const [dataCountry, setDataCountry] = useState([]);
+
+  const location = useLocation();
 
   useEffect(() => {
     const fetchingData = async () => {
@@ -16,7 +18,7 @@ const CountryDetailed = () => {
     };
 
     fetchingData();
-  }, []);
+  }, [location]);
 
   return dataCountry.map((country, key) => (
     <div key={key} className="country-detailed">
