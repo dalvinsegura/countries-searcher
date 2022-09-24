@@ -51,6 +51,26 @@ $borderRadiusPreviewCard: 5px;
       }
     }
   }
+
+  .btn-load-more {
+    width: 90vw;
+    padding: 1.5rem 0;
+
+    background-color: hsl(209, 23%, 22%);
+    color: #eee;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .btn-load-more:hover {
+    background-color: #eee;
+    box-shadow: 0 0 7px -1px rgb(255, 255, 255);
+    color: hsl(209, 23%, 22%);
+    cursor: pointer;
+    transition: all 0.4s ease-in;
+  }
 }
 
 .preview-card:hover {

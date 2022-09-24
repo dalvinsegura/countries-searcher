@@ -13,6 +13,8 @@ const AllCountries = () => {
   const [dataCountry, setDataCountry] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [regionSelected, setRegionSelected] = useState("all");
+
+  const [visible, setVisible] = useState(10);
   
   useEffect(() => {
     const fetchingData = async () => {
@@ -24,6 +26,10 @@ const AllCountries = () => {
     fetchingData();
   }, []);
   
+
+  const showMoreCountries = () => {
+    setVisible(visible + 5)
+  };
   
   
   const PreviewCard = () => {
@@ -47,7 +53,7 @@ const AllCountries = () => {
           return val;
         }
       })
-      .map((country) => (
+      .slice(0,visible).map((country) => (
         <div key={country.name.official} className="preview-card" onClick={() => {
           navigate(`/country/${country.cca2.toString().toLocaleUpperCase()}`)
 
@@ -113,6 +119,7 @@ const AllCountries = () => {
 
       <div className="preview-container">
         <PreviewCard />
+        <button className="btn-load-more" onClick={showMoreCountries}>Load More</button>
       </div>
     </div>
   );
