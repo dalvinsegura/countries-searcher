@@ -1,39 +1,42 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
+import { SpinnerCircular } from "spinners-react";
 
 import "./all-countries.scss";
 import "./input-fitlers.scss";
 // import Searcher from "./../seacher/Searcher";
 
 const AllCountries = () => {
-  const navigate = useNavigate ()
-  
-  
+  const navigate = useNavigate();
+
   const [dataCountry, setDataCountry] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [regionSelected, setRegionSelected] = useState("all");
 
+  const [loading, setLoading] = useState(false);
+
   const [visible, setVisible] = useState(10);
-  
+
   useEffect(() => {
     const fetchingData = async () => {
       const res = await fetch("https://restcountries.com/v3.1/all");
       const data = await res.json();
-      
+
+      setLoading(true);
+
       setDataCountry(data);
     };
+
     fetchingData();
   }, []);
-  
+
+  console.log(loading ? "Content loaded" : "Loading...");
 
   const showMoreCountries = () => {
-    setVisible(visible + 5)
+    setVisible(visible + 5);
   };
-  
-  
-  const PreviewCard = () => {
 
+  const PreviewCard = () => {
     return dataCountry
       .filter((val) => {
         if (regionSelected == "all") {
@@ -53,11 +56,15 @@ const AllCountries = () => {
           return val;
         }
       })
-      .slice(0,visible).map((country) => (
-        <div key={country.name.official} className="preview-card" onClick={() => {
-          navigate(`/country/${country.cca2.toString().toLocaleUpperCase()}`)
-
-        }}>
+      .slice(0, visible)
+      .map((country) => (
+        <div
+          key={country.name.official}
+          className="preview-card"
+          onClick={() => {
+            navigate(`/country/${country.cca2.toString().toLocaleUpperCase()}`);
+          }}
+        >
           <div className="img-container">
             <img src={country.flags.png} alt="a" />
           </div>
@@ -117,10 +124,20 @@ const AllCountries = () => {
         </div>
       </div>
 
-      <div className="preview-container">
-        <PreviewCard />
-        <button className="btn-load-more" onClick={showMoreCountries}>Load More</button>
-      </div>
+      {loading ? (
+        <>
+          <div className="preview-container">
+            <PreviewCard />
+          </div>
+          <button className="btn-load-more" onClick={showMoreCountries}>
+            Load More
+          </button>
+        </>
+      ) : (
+        <div className="spinner-loading">
+          <SpinnerCircular color="#ffff" />
+        </div>
+      )}
     </div>
   );
 };
