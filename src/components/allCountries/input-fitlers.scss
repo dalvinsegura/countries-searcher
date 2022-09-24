@@ -4,8 +4,8 @@
   justify-content: space-between;
   align-items: center;
 
+
   .searcher {
-    width: 25%;
     margin: 2% 0 4% 0;
     padding: 0.75rem 0;
 
@@ -14,6 +14,8 @@
     box-shadow: hsla(0, 0%, 0%, 0.575) 0 0 10px -5px;
 
     label {
+      display: flex;
+      flex-direction: row;
       i {
         margin: 0 1rem;
         font-size: 1.4 rem;
@@ -47,5 +49,187 @@
         color: hsl(0, 0%, 65%);
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1017px) {
+  .input-fitlers-container{
+    
+    .searcher{
+      margin: 5% 0 7%;
+      padding: 0 2rem;
+
+      label{
+        padding: 2rem 1rem ;
+        overflow: hidden;
+        
+      }
+
+      .input-searcher::placeholder{
+        font-size: 1.1rem;
+      }
+    }
+    
+    .fitler-region-container{
+      select{
+        padding: 1rem 1.6rem;
+        font-size: 1.2rem;
+
+      }
+    }
+
+  }
+}
+
+
+@media only screen and (max-width: 698px ) {
+  .input-fitlers-container{
+    
+    .searcher{
+      margin: 7% 0 9%;
+      padding: 0 1rem;
+
+      label{
+        padding: 2rem 1rem ;
+        overflow: hidden;
+        
+      }
+
+      .input-searcher::placeholder{
+        font-size: 1.05rem;
+      }
+    }
+    
+    .fitler-region-container{
+      select{
+        padding: 1rem 1.6rem;
+        font-size: 1.2rem;
+
+      }
+    }
+
+  }
+}
+
+@media only screen and (max-width: 606px ) {
+  .input-fitlers-container{
+    flex-direction: column;
+    align-items: center;
+
+    .searcher{
+      width: 70%;
+      margin: 7% 0 9%;
+      padding: 0 1rem;
+
+      label{
+        padding: 2rem 1rem ;
+        overflow: hidden;
+        
+      }
+
+      .input-searcher::placeholder{
+        font-size: 1.05rem;
+      }
+    }
+    
+    .fitler-region-container{
+      margin-bottom: 15%;
+      select{
+        padding: 1rem 1.6rem;
+        font-size: 1.2rem;
+
+      }
+    }
+
+  }
+}
+
+@media only screen and (max-width: 428PX ) {
+  .input-fitlers-container{
+    flex-direction: column;
+    align-items: center;
+
+    .searcher{
+      width: 80%;
+      margin: 7% 0 9%;
+
+      label{
+        padding: 2rem 1rem ;
+        overflow: hidden;
+        
+      }
+
+      .input-searcher::placeholder{
+        font-size: 1rem;
+      }
+    }
+    
+    .fitler-region-container{
+      margin-bottom: 15%;
+      select{
+        padding: 1rem 1.6rem;
+        font-size: 1rem;
+
+      }
+    }
+
+  }
+}
+
+@media only screen and (max-width: 385px ) {
+  .input-fitlers-container{
+    margin: 0 0 !important;
+    .searcher{
+      width: 80%;
+      margin: 7% 0 9%;
+
+      label{
+        padding: 1.5rem 1rem ;
+        overflow: hidden;
+        
+      }
+
+      .input-searcher::placeholder{
+        font-size: 1rem;
+      }
+    }
+    
+    .fitler-region-container{
+      margin-bottom: 15%;
+      select{
+        padding: 1rem 1.6rem;
+        font-size: 1rem;
+
+      }
+    }
+
+  }
+}
+
+@media only screen and (max-width: 293px ) {
+  .input-fitlers-container{
+
+    .searcher{
+      width: 85%;
+      margin: 15% 0 12%;
+
+      label{
+        padding: 1.5rem 1rem ;        
+      }
+
+      .input-searcher::placeholder{
+        font-size: 0.8rem;
+      }
+    }
+    
+    .fitler-region-container{
+      margin-bottom: 25%;
+      select{
+        padding: 1rem 1.6rem;
+        font-size: 0.9rem;
+
+      }
+    }
+
   }
 }

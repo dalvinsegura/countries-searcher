@@ -18,14 +18,96 @@
     }
   }
 
+
+  // BTN TOGGLER DARK MODE
   span{
     font-size: 1.15rem;
     font-weight: 400;
     text-align: center;
+    display: none;
 
     i{
         margin: 0 10px 0 0;
     }
 
   }
+}
+
+@media only screen and (max-width: 1017px) {
+
+  .navbar-container{
+    padding: 2rem 4rem;
+
+    h1{
+      font-size: 1.6rem;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 698px) {
+
+  .navbar-container{
+    padding: 2rem 4rem;
+
+    h1{
+      font-size: 1.4rem;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 606px) {
+
+  .navbar-container{
+    padding: 2rem 4rem;
+
+    h1{
+      font-size: 1.5rem;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 428PX) {
+
+  .navbar-container{
+    padding: 1.7rem 4rem;
+
+    h1{
+      font-size: 1.2rem;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 385PX) {
+
+  .navbar-container{
+    padding: 1.4rem 4rem;
+
+    h1{
+      font-size: 1.2rem;
+      i{
+        display: block;
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 293px) {
+
+  .navbar-container{
+    padding: 1.7rem 4rem;
+
+    h1{
+      font-size: 0.8rem;
+    }
+
+    i{
+      display: block;
+    }
+  }
+
 }
