@@ -5,7 +5,8 @@ $borderRadiusPreviewCard: 5px;
   display: grid;
   gap: 4rem 5rem;
   grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
-  grid-row: auto;
+  // grid-row: auto;
+
 
   margin-bottom: 5rem;
 
@@ -51,12 +52,10 @@ $borderRadiusPreviewCard: 5px;
       }
     }
   }
-
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   background-color: hsla(203, 29%, 11%, 0.418);
-
 }
 
 ::-webkit-scrollbar-thumb {
@@ -84,7 +83,6 @@ $borderRadiusPreviewCard: 5px;
   transition: all 0.4s ease-in;
 }
 
-
 .preview-card:hover {
   box-shadow: 0 0 8px 2px hsl(203, 29%, 11%);
   transform: scale(1.02, 1.02);
@@ -92,5 +90,220 @@ $borderRadiusPreviewCard: 5px;
   cursor: pointer;
 }
 
+@media only screen and (max-width: 1017px) {
 
+  .preview-container {
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    .preview-card {
+      .preview-text-content {
+        h3 {
+          font-size: 1.7rem;
+        }
 
+        h5 {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 737px) {
+
+  .preview-container {
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+    .preview-card {
+
+      .img-container {
+        img {
+          width: 100%;
+          height: 12rem;
+          border-top-left-radius: $borderRadiusPreviewCard;
+          border-top-right-radius: $borderRadiusPreviewCard;
+        }
+      }
+
+      .preview-text-content {
+        h3 {
+          font-size: 1.7rem;
+        }
+
+        h5 {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 698px) {
+  .preview-container {
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+
+    .preview-card {
+      .preview-text-content {
+        h3 {
+          font-size: 1.7rem;
+        }
+
+        h5 {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+  .btn-load-more {
+    margin: 0 auto;
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 606px) {
+  .preview-container {
+    overflow: hidden;
+    grid-template-columns: 1fr;
+
+    .preview-card {
+      width: 70%;
+      margin: 0 auto;
+
+      .img-container {
+        img {
+          width: 100%;
+          height: 12rem;
+          border-top-left-radius: $borderRadiusPreviewCard;
+          border-top-right-radius: $borderRadiusPreviewCard;
+        }
+      }
+
+      .preview-text-content {
+        h3 {
+          font-size: 1.9rem;
+        }
+
+        h5 {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  .btn-load-more {
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 428PX) {
+  .preview-container {
+    overflow: hidden;
+    grid-template-columns: 1fr;
+
+    .preview-card {
+      width: 80%;
+      margin: 0 auto;
+
+      .img-container {
+        img {
+          width: 100%;
+          height: 12rem;
+          border-top-left-radius: $borderRadiusPreviewCard;
+          border-top-right-radius: $borderRadiusPreviewCard;
+        }
+      }
+
+      .preview-text-content {
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        h5 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .btn-load-more {
+    justify-content: center;
+    width: 80%;
+    font-size: 1.6rem;
+
+  }
+}
+
+@media only screen and (max-width: 385px) {
+  .preview-container {
+    grid-template-columns: 1fr;
+    
+    .preview-card {
+      width: 80vw;
+      margin: 0 auto;
+
+      .img-container {
+        img {
+          width: 100%;
+          height: 10rem;
+          border-top-left-radius: $borderRadiusPreviewCard;
+          border-top-right-radius: $borderRadiusPreviewCard;
+        }
+      }
+
+      .preview-text-content {
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        h5 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .btn-load-more {
+    justify-content: center;
+    width: 80%;
+    font-size: 1.1rem;
+    padding: 1rem 0;
+    margin-bottom: 4rem;
+
+  }
+}
+
+@media only screen and (max-width: 293px) {
+  .preview-container {
+    overflow: hidden;
+    grid-template-columns: 1fr;
+
+    .preview-card {
+      width: 85%;
+      margin: 0 auto;
+
+      .img-container {
+        img {
+          width: 100%;
+          height: 8rem;
+          border-top-left-radius: $borderRadiusPreviewCard;
+          border-top-right-radius: $borderRadiusPreviewCard;
+        }
+      }
+
+      .preview-text-content {
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        h5 {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  .btn-load-more {
+    justify-content: center;
+    width: 80%;
+    font-size: 1.4rem;
+    
+
+  }
+}
