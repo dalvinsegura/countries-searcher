@@ -15,6 +15,17 @@
       font-size: 1rem;
       font-weight: 400;
       font-style: italic;
+
+      a{
+        text-decoration: none;
+        color: #eee;
+      }
+
+      a:hover{
+        color: rgb(184, 5, 5);
+        transition: color 0.3s ease-in;
+        font-weight: 600;
+      }
     }
   }
 
